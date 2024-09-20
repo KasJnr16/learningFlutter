@@ -13,7 +13,7 @@ class ImageWidget extends StatelessWidget {
         title: const Text("My Images"),
       ),
       body: Center(
-          child: Container(
+          child: SizedBox(
         height: 300,
         width: 250,
         child: CachedNetworkImage(

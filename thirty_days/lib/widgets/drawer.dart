@@ -21,17 +21,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 DrawerHeader(
                     padding: EdgeInsets.zero,
                     child: Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         children: [
                           CircleAvatar(
                               radius: 45,
                               backgroundImage: FileImage(
-                                  File("C:\Users\mojis\Pictures\sacks.jpg"))),
-                          SizedBox(
+                                  File("C:UsersmojisPicturessacks.jpg"))),
+                          const SizedBox(
                             width: 10,
                           ),
-                          Column(
+                          const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -49,50 +49,50 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         ],
                       ),
                     )),
-                ListTile(
+                const ListTile(
                   leading: Icon(Icons.folder, color: Colors.white),
                   title: Text(
                     "My Files",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(Icons.people, color: Colors.white),
                   title: Text(
                     "Shared with me",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(Icons.star, color: Colors.white),
                   title: Text(
                     "Starred",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(Icons.delete, color: Colors.white),
                   title: Text(
                     "Trash",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(Icons.upload, color: Colors.white),
                   title: Text(
                     "My Upload",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                Divider(),
-                ListTile(
+                const Divider(),
+                const ListTile(
                   leading: Icon(Icons.share, color: Colors.white),
                   title: Text(
                     "Share",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(Icons.logout, color: Colors.white),
                   title: Text(
                     "Logout",
@@ -107,7 +107,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             title: const Text("Drawer", style: TextStyle(color: Colors.white)),
             backgroundColor: const Color.fromARGB(255, 107, 16, 123)),
         body: Container(
-            child: Center(
+            child: const Center(
           child: Text("Hey there"),
         )));
   }

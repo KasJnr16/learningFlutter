@@ -32,14 +32,14 @@ class AnimatedTextWidget extends StatelessWidget {
               animatedTexts: [
                 RotateAnimatedText(
                   "Hello",
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.red),
                 ),
                 RotateAnimatedText(
                   "World",
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),

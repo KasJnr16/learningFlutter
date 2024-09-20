@@ -1,16 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thirty_days/widgets/alert.dart';
-import 'package:thirty_days/widgets/animated_text.dart';
-import 'package:thirty_days/widgets/bottom_navigator.dart';
-import 'package:thirty_days/widgets/bottom_sheet.dart';
-import 'package:thirty_days/widgets/button.dart';
-import 'package:thirty_days/widgets/container_size.dart';
-import 'package:thirty_days/widgets/dismissable.dart';
-import 'package:thirty_days/widgets/image.dart';
-import 'package:thirty_days/widgets/list_grid.dart';
-import 'package:thirty_days/widgets/row_column.dart';
-import 'package:thirty_days/widgets/drawer.dart';
-import 'package:thirty_days/widgets/snackbar.dart';
+import 'package:thirty_days/widgets/forms.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +23,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
           primaryColor: Colors.orange,
           brightness: Brightness.light),
-      home: const BottomNavigatorWidget(),
+      home: const FormWidget(),
     );
   }
 }

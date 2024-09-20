@@ -23,7 +23,7 @@ class _DismissableWidegtState extends State<DismissableWidegt> {
             return Dismissible(
               onDismissed: (direction) {
                 if (direction == DismissDirection.startToEnd) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text(
                       "Deleted",
                       style: TextStyle(fontSize: 20),
@@ -31,7 +31,7 @@ class _DismissableWidegtState extends State<DismissableWidegt> {
                     backgroundColor: Colors.red,
                   ));
                 } else {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text(
                       "Achived",
                       style: TextStyle(fontSize: 20),

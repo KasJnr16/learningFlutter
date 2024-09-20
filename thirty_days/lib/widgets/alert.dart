@@ -7,7 +7,7 @@ class AlertWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Alert Dialog"),
+        title: const Text("Alert Dialog"),
       ),
       body: Center(
         child: ElevatedButton(
@@ -37,12 +37,12 @@ Future<void> _showMyDialog(BuildContext context) async {
             ),
           ),
           actions: [
-            TextButton(onPressed: () {}, child: Text("Approve")),
+            TextButton(onPressed: () {}, child: const Text("Approve")),
             TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("Cancel"))
+                child: const Text("Cancel"))
           ],
         );
       });

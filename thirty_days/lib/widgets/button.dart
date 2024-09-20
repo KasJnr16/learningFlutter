@@ -7,7 +7,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Buttons"),
+        title: const Text("Buttons"),
         backgroundColor: Colors.deepPurple,
       ),
       body: Center(
@@ -28,7 +28,7 @@ class Button extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Container(
+            SizedBox(
               height: 50,
               width: 300,
               child: ElevatedButton(
