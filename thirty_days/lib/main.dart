@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:thirty_days/widgets/forms.dart';
+import 'package:thirty_days/utils/colors.dart';
+import 'package:thirty_days/widgets/bottom_sheet.dart';
+import 'package:thirty_days/widgets/clone_ui.dart';
+import 'package:thirty_days/widgets/cloning_ui2.dart';
+import 'package:thirty_days/widgets/image_picker.dart';
+import 'package:thirty_days/widgets/location.dart';
+import 'package:thirty_days/widgets/snackbar.dart';
+import 'package:thirty_days/widgets/tab_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +28,9 @@ class MyApp extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 25,
                   fontWeight: FontWeight.bold)),
-          primaryColor: Colors.orange,
+          primaryColor: AppColors.bgColor,
           brightness: Brightness.light),
-      home: const FormWidget(),
+      home: const CloneMainWidget(),
     );
   }
 }

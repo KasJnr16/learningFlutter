@@ -32,6 +32,11 @@ dependencies:
     sdk: flutter
   cached_network_image:
   animated_text_kit:
+  google_fonts:
+  image_picker:
+  location:
+  geolocator:
+  fluttertoast:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,6 +44,16 @@ dependencies:
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.14.0"
+  flutter_native_splash: ^2.4.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
+  remove_alpha_ios: true
+  min_sdk_android: 21
+
   flutter_test:
     sdk: flutter
 
