@@ -1,14 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:thirty_days/utils/colors.dart';
-import 'package:thirty_days/widgets/bottom_sheet.dart';
-import 'package:thirty_days/widgets/clone_ui.dart';
-import 'package:thirty_days/widgets/cloning_ui2.dart';
-import 'package:thirty_days/widgets/image_picker.dart';
-import 'package:thirty_days/widgets/location.dart';
-import 'package:thirty_days/widgets/snackbar.dart';
-import 'package:thirty_days/widgets/tab_bar.dart';
+import 'package:thirty_days/widgets/auth_with_firebase.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -30,7 +27,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
           primaryColor: AppColors.bgColor,
           brightness: Brightness.light),
-      home: const CloneMainWidget(),
+      home: const UserAuthWidget(),
     );
   }
 }
