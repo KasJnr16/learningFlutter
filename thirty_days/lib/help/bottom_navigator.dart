@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:thirty_days/widgets/alert.dart';
-import 'package:thirty_days/widgets/dismissable.dart';
-import 'package:thirty_days/widgets/row_column.dart';
-import 'package:thirty_days/widgets/snackbar.dart';
+import 'package:thirty_days/help/alert.dart';
+import 'package:thirty_days/help/dismissable.dart';
+import 'package:thirty_days/help/row_column.dart';
+import 'package:thirty_days/help/snackbar.dart';
 
 class BottomNavigatorWidget extends StatefulWidget {
   const BottomNavigatorWidget({super.key});

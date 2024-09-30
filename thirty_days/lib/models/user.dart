@@ -1,3 +1,5 @@
+import 'package:thirty_days/models/image.dart';
+
 class User {
   int? userId;
   String username;
@@ -5,14 +7,14 @@ class User {
   String lastname;
   DateTime? dateOfBirth; // Marked as nullable to handle login case
   String email;
-  int phone;
+  String phone;
   String campusName;
-  String password;
+  String? password;
   String? bio;
-  String? profilePicture;
-  String? bannerPicture;
-  List<User>? following;
-  List<User>? followers;
+  Image? profilePicture;
+  Image? bannerPicture;
+  // List<User>? following;
+  // List<User>? followers;
   String? verificationCode;
 
   // Main constructor
@@ -25,12 +27,12 @@ class User {
     required this.email,
     required this.phone,
     required this.campusName,
-    required this.password,
+    this.password,
     this.bio,
     this.profilePicture,
     this.bannerPicture,
-    this.following,
-    this.followers,
+    // this.following,
+    // this.followers,
     this.verificationCode,
   });
 
@@ -48,28 +50,33 @@ class User {
 
   // From JSON
   factory User.fromJson(Map<String, dynamic> json) {
+    // Ensure we parse the nested 'user' object
+    final userData = json['user'];
+
     return User(
-      userId: json['userId'],
-      username: json['username'],
-      firstname: json['firstname'],
-      lastname: json['lastname'],
-      dateOfBirth: json['dateOfBirth'] != null
-          ? DateTime.parse(json['dateOfBirth'])
+      userId: userData['userId'],
+      username: userData['username'],
+      firstname: userData['firstname'],
+      lastname: userData['lastname'],
+      dateOfBirth: userData['dateOfBirth'] != null
+          ? DateTime.parse(userData['dateOfBirth'])
           : null,
-      email: json['email'],
-      phone: json['phone'],
-      campusName: json['campusName'],
-      password: json['password'], // Normally, you'd exclude password here
-      bio: json['bio'],
-      profilePicture: json['profilePicture'],
-      bannerPicture: json['bannerPicture'],
-      following: (json['following'] as List<dynamic>?)
-          ?.map((e) => User.fromJson(e))
-          .toList(),
-      followers: (json['followers'] as List<dynamic>?)
-          ?.map((e) => User.fromJson(e))
-          .toList(),
-      verificationCode: json['verificationCode'],
+      email: userData['email'],
+      phone: userData['phone'],
+      campusName: userData['campusName'],
+      bio: userData['bio'],
+      profilePicture: userData['profilePicture'],
+      bannerPicture: userData['bannerPicture'],
+
+      //TODO: authorities field is in the form of a list of maps, might want to handle it later Kassim!!!
+
+      // following: (userData['following'] as List<dynamic>?)
+      //     ?.map((e) => User.fromJson(e))
+      //     .toList(),
+      // followers: (userData['followers'] as List<dynamic>?)
+      //     ?.map((e) => User.fromJson(e))
+      //     .toList(),
+      verificationCode: userData['verificationCode'],
     );
   }
 
@@ -88,8 +95,8 @@ class User {
       'bio': bio,
       'profilePicture': profilePicture,
       'bannerPicture': bannerPicture,
-      'following': following?.map((e) => e.toJson()).toList(),
-      'followers': followers?.map((e) => e.toJson()).toList(),
+      // 'following': following?.map((e) => e.toJson()).toList(),
+      // 'followers': followers?.map((e) => e.toJson()).toList(),
       'verificationCode': verificationCode,
     };
   }

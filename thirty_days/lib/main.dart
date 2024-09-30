@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thirty_days/utils/colors.dart';
-import 'package:thirty_days/widgets/authWidget.dart';
+import 'package:thirty_days/widgets/introducationWidget.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
-              backgroundColor: Colors.orange,
+              backgroundColor: Colors.white,
               titleTextStyle: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 25,
                   fontWeight: FontWeight.bold)),
           primaryColor: AppColors.bgColor,
           brightness: Brightness.light),
-      home: const UserAuthWidget(),
+      home: const IntroducationWidget(),
     );
   }
 }

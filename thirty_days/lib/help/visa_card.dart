@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thirty_days/utils/colors.dart';
-import 'package:thirty_days/widgets/content.dart';
+import 'package:thirty_days/help/content.dart';
 
 class VisaCardWidget extends StatelessWidget {
   const VisaCardWidget({super.key});
