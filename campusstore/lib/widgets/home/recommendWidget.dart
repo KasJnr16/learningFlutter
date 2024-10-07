@@ -103,12 +103,10 @@ class _RecommendedWidgetState extends State<RecommendedWidget> {
     );
   }
 
-  // Loading indicator widget
   Widget _buildLoadingIndicator() {
     return Center(child: CircularProgressIndicator());
   }
 
-  // Error card widget
   Widget _buildErrorCard(Object? error) {
     return _buildMessageCard(
       icon: Icons.warning,

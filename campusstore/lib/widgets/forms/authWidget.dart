@@ -564,18 +564,6 @@ class _UserAuthWidgetState extends State<UserAuthWidget> {
 
                                   if (res) {
                                     _clearForm();
-                                  } else {
-                                    // Handle error, maybe show a Snackbar or AlertDialog
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          "Error during authentication",
-                                          style: TextStyle(fontSize: 18),
-                                        ),
-                                        backgroundColor: Colors.red,
-                                      ),
-                                    );
-                                    ;
                                   }
                                 }
                               },

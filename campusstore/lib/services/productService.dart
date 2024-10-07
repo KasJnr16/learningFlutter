@@ -1,15 +1,20 @@
 import 'dart:convert';
 import 'package:campusstore/models/product.dart';
+import 'package:campusstore/widgets/utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ProductService {
-  static const String _baseUrl =
-      "http://192.168.8.119:9000/campusstore/products";
+  static const String _endpoint = "/products";
+
+
+  String getFullUrl() {
+    return "${Constants.hostUrl}$_endpoint";
+  }
 
   // Fetch products from API
   Future<List<Product>?> fetchProducts(BuildContext context) async {
-    final String url = _baseUrl;
+    final String url = getFullUrl();
     final response = await _getRequest(url, context);
 
     if (response != null) {
@@ -19,20 +24,8 @@ class ProductService {
           return jsonResponse
               .map((productJson) => Product.fromJson(productJson))
               .toList();
-        case 404:
-          _showSnackBar(context, "Products not found. Please try again later.");
-          break;
-        case 500:
-        case 501:
-        case 502:
-        case 503:
-        case 504:
-          _showSnackBar(context, "Server error. Please try again later.");
-          break;
         default:
-          print("Failed with status code: ${response.statusCode}");
-          print("Response: ${response.body}");
-          _showSnackBar(context, "Unexpected error occurred.");
+          _showSnackBar(context, "Unexpected error fetching product.");
       }
     }
     return null;
@@ -70,4 +63,6 @@ class ProductService {
       ),
     );
   }
+
+  
 }

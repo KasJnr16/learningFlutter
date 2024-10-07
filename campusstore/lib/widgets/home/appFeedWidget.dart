@@ -1,6 +1,7 @@
 import 'package:campusstore/models/user.dart';
 import 'package:campusstore/widgets/home/recommendWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../utils/categoriesWidget.dart'; // Assuming this is in your project
 
 class FeedWidget extends StatefulWidget {
@@ -29,7 +30,6 @@ class _FeedWidgetState extends State<FeedWidget> {
         width: w,
         child: Column(
           children: [
-            Divider(),
             SearchBarWidget(),
             Expanded(
               child: ListView(
@@ -74,14 +74,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           size: 50, // Make the icon large
         ),
       ),
-      title: Text(
-        appName, // Display app name
-        style: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
-          fontSize: 28, // Make the text larger and bold
-        ),
-      ),
+      title: Text(appName, // Display app name
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 28, // Make the text larger and bold
+            ),
+          )),
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 16.0),
@@ -207,25 +207,23 @@ class CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 70,
       padding: EdgeInsets.only(left: 25),
       child: Row(
         children: [
           Container(
-            height: 50,
-            width: 170,
+            height: 70,
+            width: 200,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 10), // Adjusts padding around the text and icon
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                elevation: 5, // Adjusts padding around the text and icon
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
                       20), // Makes the button slightly rounded
                 ),
                 backgroundColor:
-                    Colors.white, // Background color for the button
-                elevation: 5, // Optional: Adds a bit of shadow
+                    Colors.black, // Background color for the button
               ),
               onPressed: () => showModalBottomSheet(
                 context: context,
@@ -246,7 +244,7 @@ class CategoryButton extends StatelessWidget {
                   Text(
                     "Categories",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 22,
                       fontWeight: FontWeight.w500,
                     ),
@@ -254,7 +252,7 @@ class CategoryButton extends StatelessWidget {
                   SizedBox(width: 5),
                   Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.black,
+                    color: Colors.white,
                     size: 20,
                   ),
                 ],

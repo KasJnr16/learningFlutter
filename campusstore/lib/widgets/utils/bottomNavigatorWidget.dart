@@ -1,7 +1,8 @@
 import 'package:campusstore/models/user.dart';
+import 'package:campusstore/widgets/storeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:campusstore/widgets/home/appFeedWidget.dart';
-import 'package:campusstore/widgets/home/profileWidget.dart';
+import 'package:campusstore/widgets/userWidget.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   final User user;
@@ -35,9 +36,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         },
         children: [
           FeedWidget(user: widget.user),
-          Center(child: Text('Shopping Widget Placeholder')),
+          StoreWidget(userId: widget.user.userId!),
           Center(child: Text('My Store Widget Placeholder')),
-          ProfileWidget(user: widget.user),
+          UserWidget(userId: widget.user.userId!),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

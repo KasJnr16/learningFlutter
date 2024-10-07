@@ -1,3 +1,4 @@
+import 'package:campusstore/widgets/introducationWidget.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
           primaryColor: Colors.white,
           brightness: Brightness.light),
-      home: const Scaffold(),
+      home: const IntroducationWidget(),
     );
   }
 }
